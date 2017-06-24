@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ch" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>阴阳师-式神测试</title>
+	<link rel="icon" href="img/炸弹.png" type="image/vnd.microsoft.icon" />
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+
+	<!--必要样式-->
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<script src="js/modernizr-custom.js"></script>
+	<script>
+		document.documentElement.className = 'js';
+	</script>
+</head>
+
+<body class="demo loading">
+	<embed src="bgm/做题.mp3"  width="0" height="0"></embed>
+	<main>
+		<div class="page-view">
+			<div class="project">
+				<canvas class="fireworks"></canvas>
+				<div class="arrows" style="margin-left:-5%">
+					<a href="profile.html">
+						<img src="img/合影.png" alt="阴阳师合" style="z-index:100;max-width:300px;margin-top:-800px;" />
+					</a>
+				</div>
+				<div class="text">
+					<h1 style="font-size:70px;color:white;font-family:'yinyangshi4';">以下三者你更喜欢？</h1>
+				</div>
+				<div class="arrows" style="color:white;margin-left:20%;margin-top:-200px;font-family:'yinyangshi4';">
+					<div class="arrow next choice1">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">茫茫海洋</h1>
+					</div>
+					<div class="arrow next choice2" style="margin-left:50px;">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">苍凉大漠</h1>
+					</div>
+					<div class="arrow next choice3" style="margin-left:50px;">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">开阔草原</h1>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<canvas width="100%" height="100%" class="snow"></canvas>
+				<div class="text">
+					<h1 style="font-size:70px;color:white;font-family:'yinyangshi4';">你一般依据什么作出判断？</h1>
+				</div>
+				<div class="arrows" style="color:white;margin-left:20%;margin-top:-200px;font-family:'yinyangshi4';">
+					<div class="arrow next choice1">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">事件逻辑</h1>
+					</div>
+					<div class="arrow next choice2" style="margin-left:50px;">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">第一直觉</h1>
+					</div>
+					<div class="arrow next choice3" style="margin-left:50px;">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">他人建议</h1>
+					</div>
+				</div>
+			</div>
+			<div class="project">
+				<a href="profile.html">
+					<marquee direction="right"><img src="img/山兔.gif" alt="山兔" style="z-index:100;max-width:300px;margin-top:300px;" /></marquee>
+				</a>
+				<div class="text">
+					<h1 style="font-size:70px;color:white;font-family:'yinyangshi4';text-shadow: 0 0 20px black;">你更喜欢以下哪个学校？</h1>
+				</div>
+				<div class="arrows" style="color:white;margin-left:20%;margin-top:-200px;font-family:'yinyangshi4';">
+					<div class="arrow next choice1" id="slide1">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">霍格沃茨</h1>
+					</div>
+					<div class="arrow next choice2" id="slide2" style="margin-left:50px;">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">Xavier天赋学校</h1>
+					</div>
+					<div class="arrow next choice3" id="slide3" style="margin-left:50px;">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">同济大学</h1>
+					</div>
+				</div>
+			</div>
+			<div class="project seg-2">
+				<div class="segmenter" id="segmenter1" style="background-image: url(img/场景1.jpg)"></div>
+				<h2 class="trigger-headline trigger-headline--hidden" id="headline1" style="font-family:'yinyangshi4';font-weight:lighter;"><span>以下物品你更喜欢？<span></h2>
+				<div class="arrows" style="color: #fbe094;margin-left:30%;margin-top:-200px;font-family:'yinyangshi4';">
+					<div class="arrow next choice1">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">勾玉</h1>
+					</div>
+					<div class="arrow next choice2" style="margin-left:50px;">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">符咒</h1>
+					</div>
+					<div class="arrow next choice3" style="margin-left:50px;">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">体力</h1>
+					</div>
+				</div>
+			</div>
+			<div class="project starsky">
+				<div class="landscape"></div>
+				<div class="filter"></div>
+				<canvas id="canvas2"></canvas>
+				<div class="text">
+					<h1 style="font-size:70px;color:rgb(177, 177, 177);font-family:'yinyangshi4';">以下三种音乐你更喜欢？</h1>
+				</div>
+				<div class="arrows" style="color:rgb(226, 226, 226);margin-left:23%;margin-top:-200px;font-family:'yinyangshi4';">
+					<div class="arrow next choice1" id="slide4">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">轻音乐</h1>
+					</div>
+					<div class="arrow next choice2" id="slide5" style="margin-left:50px;">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">金属摇滚</h1>
+					</div>
+					<div class="arrow next choice3" id="slide6" style="margin-left:50px;">
+						<h1 style="font-weight:lighter;text-shadow: 0 0 20px black;">忧郁情歌</h1>
+					</div>
+				</div>
+			</div>
+			<div class="project seg-5">
+				<div class="segmenter segmenter2" style="background-image: url(img/场景2.jpg)"></div>
+				<h2 class="trigger-headline trigger-headline--hidden" id="headline2" style="font-family:'yinyangshi4';font-weight:lighter;"><span>你更喜欢阴阳师游戏的哪个部分？</span></h2>
+				<div class="arrows toresult" style="margin-left:20%;margin-top:-200px;font-family:'yinyangshi4';">
+					<div class="arrow end choice1">
+						<h1 style="color: #a41555;font-weight:lighter;text-shadow: 0 0 20px black;" onclick="send_result()">悬赏封印</h1>
+					</div>
+					<div class="arrow end choice2" style="margin-left:50px;">
+						<h1 style="color: #a41555;font-weight:lighter;text-shadow: 0 0 20px black;" onclick="send_result()">御魂或觉醒</h1>
+					</div>
+					<div class="arrow end choice3" style="margin-left:50px;">
+						<h1 style="color: #a41555;font-weight:lighter;text-shadow: 0 0 20px black;" onclick="send_result()">斗技</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="js/zepto.min.js"></script>
+	<script src="js/anime.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/demo.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/slide.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.let_it_snow.js"></script>
+
+	<script type="text/javascript">
+		var c2 = document.querySelectorAll(".choice2");
+		var c3 = document.querySelectorAll(".choice3");
+		for (var i = 0; i < c2.length; i++) {
+			c2[i].addEventListener("click", calculator2);
+		}
+		for (var i = 0; i < c3.length; i++) {
+			c3[i].addEventListener("click", calculator3);
+		}
+
+		var re = document.querySelectorAll(".toresult");
+		for (var i = 0; i < re.length; i++) {
+			re[i].addEventListener("click", send_result);
+		}
+
+		var mark = 0;
+
+		function calculator2() {
+			mark = mark + 1;
+			//window.alert(mark);
+		}
+
+		function calculator3() {
+			mark = mark + 2;
+			//window.alert(mark);
+		}
+
+		function send_result() {
+			document.location.href = "result.html?mark=" + mark.toString();
+		}
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("canvas.snow").let_it_snow({
+				windPower: 7,
+				speed: 3
+			});
+		});
+	</script>
+
+	<script>
+		var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+		var ff = navigator.userAgent.indexOf('Firefox') > 0;
+		var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart' : 'mousedown';
+		if (iOS) document.body.classList.add('iOS');
+
+		var fireworks = (function() {
+
+			var getFontSize = function() {
+				return parseFloat(getComputedStyle(document.documentElement).fontSize);
+			}
+
+			var canvas = document.querySelector('.fireworks');
+			var ctx = canvas.getContext('2d');
+			var numberOfParticules = 24;
+			var distance = 200;
+			var x = 0;
+			var y = 0;
+			var animations = [];
+
+			var setCanvasSize = function() {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+			}
+
+			var updateCoords = function(e) {
+				x = e.clientX || e.touches[0].clientX;
+				y = e.clientY || e.touches[0].clientY;
+			}
+
+			var colors = ['#fff'];
+
+			var createCircle = function(x, y) {
+				var p = {};
+				p.x = x;
+				p.y = y;
+				p.color = colors[anime.random(0, colors.length - 1)];
+				p.color = '#FFF';
+				p.radius = 0;
+				p.alpha = 1;
+				p.lineWidth = 6;
+				p.draw = function() {
+					ctx.globalAlpha = p.alpha;
+					ctx.beginPath();
+					ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true);
+					ctx.lineWidth = p.lineWidth;
+					ctx.strokeStyle = p.color;
+					ctx.stroke();
+					ctx.globalAlpha = 1;
+				}
+				return p;
+			}
+
+			var createParticule = function(x, y) {
+				var p = {};
+				p.x = x;
+				p.y = y;
+				p.color = colors[anime.random(0, colors.length - 1)];
+				p.radius = anime.random(getFontSize(), getFontSize() * 2);
+				p.draw = function() {
+					ctx.beginPath();
+					ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI, true);
+					ctx.fillStyle = p.color;
+					ctx.fill();
+				}
+				return p;
+			}
+
+			var createParticles = function(x, y) {
+				var particules = [];
+				for (var i = 0; i < numberOfParticules; i++) {
+					var p = createParticule(x, y);
+					particules.push(p);
+				}
+				return particules;
+			}
+
+			var removeAnimation = function(animation) {
+				var index = animations.indexOf(animation);
+				if (index > -1) animations.splice(index, 1);
+			}
+
+			var animateParticules = function(x, y) {
+				setCanvasSize();
+				var particules = createParticles(x, y);
+				var circle = createCircle(x, y);
+				var particulesAnimation = anime({
+					targets: particules,
+					x: function(p) {
+						return p.x + anime.random(-distance, distance);
+					},
+					y: function(p) {
+						return p.y + anime.random(-distance, distance);
+					},
+					radius: 0,
+					duration: function() {
+						return anime.random(1200, 1800);
+					},
+					easing: 'easeOutExpo',
+					complete: removeAnimation
+				});
+				var circleAnimation = anime({
+					targets: circle,
+					radius: function() {
+						return anime.random(getFontSize() * 8.75, getFontSize() * 11.25);
+					},
+					lineWidth: 0,
+					alpha: {
+						value: 0,
+						easing: 'linear',
+						duration: function() {
+							return anime.random(400, 600);
+						}
+					},
+					duration: function() {
+						return anime.random(1200, 1800);
+					},
+					easing: 'easeOutExpo',
+					complete: removeAnimation
+				});
+				animations.push(particulesAnimation);
+				animations.push(circleAnimation);
+			}
+
+			var mainLoop = anime({
+				duration: Infinity,
+				update: function() {
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+					animations.forEach(function(anim) {
+						anim.animatables.forEach(function(animatable) {
+							animatable.target.draw();
+						});
+					});
+				}
+			});
+
+			document.addEventListener(tap, function(e) {
+				updateCoords(e);
+				animateParticules(x, y);
+				ga('send', 'event', 'Fireworks', 'Click');
+			}, false);
+
+			window.addEventListener('resize', setCanvasSize, false);
+
+			return {
+				boom: animateParticules
+			}
+
+		})();
+
+		var logoAnimation = function() {
+
+			document.body.classList.add('ready');
+
+			var setDashoffset = function(el) {
+				var l = el.getTotalLength();
+				el.setAttribute('stroke-dasharray', l);
+				return [l, 0];
+			}
+		}
+	</script>
+
+
+	<!-- Star Sky -->
+	<script>
+		function Star(id, x, y) {
+			this.id = id;
+			this.x = x;
+			this.y = y;
+			this.r = Math.floor(Math.random() * 2) + 1;
+			var alpha = (Math.floor(Math.random() * 10) + 1) / 10 / 2;
+			this.color = "rgba(255,255,255," + alpha + ")";
+		}
+
+		Star.prototype.draw = function() {
+			ctx.fillStyle = this.color;
+			ctx.shadowBlur = this.r * 2;
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+			ctx.closePath();
+			ctx.fill();
+		}
+
+		Star.prototype.move = function() {
+			this.y -= .15;
+			if (this.y <= -10) this.y = HEIGHT + 10;
+			this.draw();
+		}
+
+		Star.prototype.die = function() {
+			stars[this.id] = null;
+			delete stars[this.id];
+		}
+
+
+		function Dot(id, x, y, r) {
+			this.id = id;
+			this.x = x;
+			this.y = y;
+			this.r = Math.floor(Math.random() * 5) + 1;
+			this.maxLinks = 2;
+			this.speed = .5;
+			this.a = .5;
+			this.aReduction = .005;
+			this.color = "rgba(255,255,255," + this.a + ")";
+			this.linkColor = "rgba(255,255,255," + this.a / 4 + ")";
+
+			this.dir = Math.floor(Math.random() * 140) + 200;
+		}
+
+		Dot.prototype.draw = function() {
+			ctx.fillStyle = this.color;
+			ctx.shadowBlur = this.r * 2;
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+			ctx.closePath();
+			ctx.fill();
+		}
+
+		Dot.prototype.link = function() {
+			if (this.id == 0) return;
+			var previousDot1 = getPreviousDot(this.id, 1);
+			var previousDot2 = getPreviousDot(this.id, 2);
+			var previousDot3 = getPreviousDot(this.id, 3);
+			if (!previousDot1) return;
+			ctx.strokeStyle = this.linkColor;
+			ctx.moveTo(previousDot1.x, previousDot1.y);
+			ctx.beginPath();
+			ctx.lineTo(this.x, this.y);
+			if (previousDot2 != false) ctx.lineTo(previousDot2.x, previousDot2.y);
+			if (previousDot3 != false) ctx.lineTo(previousDot3.x, previousDot3.y);
+			ctx.stroke();
+			ctx.closePath();
+		}
+
+		function getPreviousDot(id, stepback) {
+			if (id == 0 || id - stepback < 0) return false;
+			if (typeof dots[id - stepback] != "undefined") return dots[id - stepback];
+			else return false; //getPreviousDot(id - stepback);
+		}
+
+		Dot.prototype.move = function() {
+			this.a -= this.aReduction;
+			if (this.a <= 0) {
+				this.die();
+				return
+			}
+			this.color = "rgba(255,255,255," + this.a + ")";
+			this.linkColor = "rgba(255,255,255," + this.a / 4 + ")";
+			this.x = this.x + Math.cos(degToRad(this.dir)) * this.speed,
+				this.y = this.y + Math.sin(degToRad(this.dir)) * this.speed;
+
+			this.draw();
+			this.link();
+		}
+
+		Dot.prototype.die = function() {
+			dots[this.id] = null;
+			delete dots[this.id];
+		}
+
+
+		var canvas2 = document.getElementById('canvas2'),
+			ctx = canvas2.getContext('2d'),
+			WIDTH,
+			HEIGHT,
+			mouseMoving = false,
+			mouseMoveChecker,
+			mouseX,
+			mouseY,
+			stars = [],
+			initStarsPopulation = 80,
+			dots = [],
+			dotsMinDist = 2,
+			maxDistFromCursor = 50;
+
+		setCanvasSize();
+		init();
+
+		function setCanvasSize() {
+			WIDTH = document.documentElement.clientWidth,
+				HEIGHT = document.documentElement.clientHeight;
+
+			canvas2.setAttribute("width", WIDTH);
+			canvas2.setAttribute("height", HEIGHT);
+		}
+
+		function init() {
+			ctx.strokeStyle = "white";
+			ctx.shadowColor = "white";
+			for (var i = 0; i < initStarsPopulation; i++) {
+				stars[i] = new Star(i, Math.floor(Math.random() * WIDTH), Math.floor(Math.random() * HEIGHT));
+				//stars[i].draw();
+			}
+			ctx.shadowBlur = 0;
+			animate();
+		}
+
+		function animate() {
+			ctx.clearRect(0, 0, WIDTH, HEIGHT);
+
+			for (var i in stars) {
+				stars[i].move();
+			}
+			for (var i in dots) {
+				dots[i].move();
+			}
+			drawIfMouseMoving();
+			requestAnimationFrame(animate);
+		}
+
+		window.onmousemove = function(e) {
+			mouseMoving = true;
+			mouseX = e.clientX;
+			mouseY = e.clientY;
+			clearInterval(mouseMoveChecker);
+			mouseMoveChecker = setTimeout(function() {
+				mouseMoving = false;
+			}, 100);
+		}
+
+
+		function drawIfMouseMoving() {
+			if (!mouseMoving) return;
+
+			if (dots.length == 0) {
+				dots[0] = new Dot(0, mouseX, mouseY);
+				dots[0].draw();
+				return;
+			}
+
+			var previousDot = getPreviousDot(dots.length, 1);
+			var prevX = previousDot.x;
+			var prevY = previousDot.y;
+
+			var diffX = Math.abs(prevX - mouseX);
+			var diffY = Math.abs(prevY - mouseY);
+
+			if (diffX < dotsMinDist || diffY < dotsMinDist) return;
+
+			var xVariation = Math.random() > .5 ? -1 : 1;
+			xVariation = xVariation * Math.floor(Math.random() * maxDistFromCursor) + 1;
+			var yVariation = Math.random() > .5 ? -1 : 1;
+			yVariation = yVariation * Math.floor(Math.random() * maxDistFromCursor) + 1;
+			dots[dots.length] = new Dot(dots.length, mouseX + xVariation, mouseY + yVariation);
+			dots[dots.length - 1].draw();
+			dots[dots.length - 1].link();
+		}
+		//setInterval(drawIfMouseMoving, 17);
+
+		function degToRad(deg) {
+			return deg * (Math.PI / 180);
+		}
+	</script>
+
+	<!-- loading -->
+	<script>
+		(function() {
+
+			function init() {
+				new Slideshow(document.querySelector('.slideshow'));
+			}
+
+			// Fake loading time..
+			var startTime = new Date().getTime();
+			imagesLoaded(document.querySelector('main'), function() {
+				var elapsed = new Date().getTime() - startTime,
+					initFn = function() {
+						document.body.classList.remove('loading');
+						setTimeout(init, 50);
+					};
+
+				if (elapsed > 2000) {
+					initFn();
+				} else {
+					setTimeout(initFn, 1000);
+				}
+			});
+
+		})();
+	</script>
+</body>
+
+</html>
